@@ -100,23 +100,7 @@ vector<vector<int>> read2DVectorWithSize(int row, int column) {
   return vec2d;
 }
 
-void print1DVector(vector<int> vec) {
-  for (const auto &i : vec) {
-    cout<<i<<" ";
-  }
 
-  cout<<endl;
-  
-}
-void print2DVector(vector<vector<int>> vec) {
-  for (const auto &r : vec) {
-    for (const auto &c : r) {
-      cout<<c<<" ";
-    }
-    cout<<endl;
-  }
-  cout<<endl;
-}
 
 // =====================================================
 

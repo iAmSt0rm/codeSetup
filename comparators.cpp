@@ -1,6 +1,7 @@
 #include<iostream>
 #include<vector>
 #include<algorithm>
+#include "printers.cpp"
 
 using namespace std;
 
@@ -11,12 +12,12 @@ bool comparatorFunction (int a,int b) { return (a<b); }
 
 struct comp {
   bool operator() (int a,int b) { return (a<b); }
-}compara;
+};
 
 // Comparator Templates  =====================================
 
 template <typename T>
-bool comparatorFunction(T a, T b) {
+bool comparatorFunctionTemplate(T a, T b) {
   return a<b;
 }
 
@@ -27,8 +28,11 @@ struct compTemplate {
 
 int main () {
   vector<int> ivec {1,2,3,4,1};
-  sort(ivec.begin(), ivec.end(), compTemplate<int>());
-  sort(ivec.begin(), ivec.end(), comparatorFunction<int>);
+  sort(ivec.begin(), ivec.end(), comp());
+  sort(ivec.begin(), ivec.end(), comparatorFunction);
+
+  // sort(ivec.begin(), ivec.end(), compTemplate<int>());
+  // sort(ivec.begin(), ivec.end(), comparatorFunctionTemplate<int>);
 
   print1DVector<int>(ivec);
 }
